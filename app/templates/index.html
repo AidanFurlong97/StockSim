@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>StockSim</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </head>
+  <body>
+    <nav>
+      <svg
+        class="logo"
+        width="50"
+        height="50"
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Circle surrounding the dollar signs -->
+        <circle
+          cx="100"
+          cy="100"
+          r="40"
+          stroke="azure"
+          stroke-width="6"
+          fill="none"
+        />
+        <!-- Dollar Sign 1 -->
+        <text
+          x="87"
+          y="120"
+          font-family="Arial"
+          font-size="58"
+          fill="azure"
+          text-anchor="middle"
+        >
+          $
+        </text>
+        <!-- Dollar Sign 2 -->
+        <text
+          x="111"
+          y="120"
+          font-family="Arial"
+          font-size="58"
+          fill="azure"
+          text-anchor="middle"
+        >
+          $
+        </text>
+      </svg>
+      <h5>USER'S PORTFOLIO</h5>
+      <h5>PORTFOLIO VALUE: $100,000</h5>
+      <h5>REMAINING CASH: $100,000</h5>
+      <!-- <img src="logo.png" alt="Logo" class="logo" /> -->
+    </nav>
+    <form id="add-ticker-form">
+      <input type="text" id="new-ticker" placeholder="Stock Ticker" required />
+      <button type="submit" class="ticker-btn submit-btn">View Stock</button>
+      <div id="tickers-grid"></div>
+      <h6 id="timer">Next update in <span id="counter">60</span> seconds.</h6>
+    </form>
+  </body>
+</html>
